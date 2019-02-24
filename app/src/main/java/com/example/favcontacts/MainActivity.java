@@ -14,8 +14,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     Button btnCall1, btnText1, btnCall2, btnText2, btnCall3, btnText3;
-    TextView txtName1, txtNumber1, txtName2, txtNumber2, txtName3, txtNumber3;
-
+    TextView txtNumber1, txtNumber2, txtNumber3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,13 +22,12 @@ public class MainActivity extends AppCompatActivity {
 
         SetupTextViews();
         SetupButtons();
+        CallButtons();
+        TextButtons();
 
     }
 
     public void SetupTextViews() {
-        txtName1 = findViewById(R.id.txtName1);
-        txtName2 = findViewById(R.id.txtName2);
-        txtName3 = findViewById(R.id.txtName3);
         txtNumber1 = findViewById(R.id.txtNumber1);
         txtNumber2 = findViewById(R.id.txtNumber2);
         txtNumber3 = findViewById(R.id.txtNumber3);
@@ -49,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent callIntent = new Intent(Intent.ACTION_CALL);
                 callIntent.setData(Uri.parse("tel:" + txtNumber1.getText().toString()));
-                if (callIntent.resolveActivity(getPackageManager()) != null && ActivityCompat.checkSelfPermission(v.getContext(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
+                if (callIntent.resolveActivity(getPackageManager()) != null && ActivityCompat.checkSelfPermission(v.getContext(), Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
                     startActivity(callIntent);
                 }
             }
@@ -59,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent callIntent = new Intent(Intent.ACTION_CALL);
                 callIntent.setData(Uri.parse("tel:" + txtNumber2.getText().toString()));
-                if (callIntent.resolveActivity(getPackageManager()) != null && ActivityCompat.checkSelfPermission(v.getContext(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
+                if (callIntent.resolveActivity(getPackageManager()) != null && ActivityCompat.checkSelfPermission(v.getContext(), Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
                     startActivity(callIntent);
                 }
             }
@@ -69,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent callIntent = new Intent(Intent.ACTION_CALL);
                 callIntent.setData(Uri.parse("tel:" + txtNumber3.getText().toString()));
-                if (callIntent.resolveActivity(getPackageManager()) != null && ActivityCompat.checkSelfPermission(v.getContext(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
+                if (callIntent.resolveActivity(getPackageManager()) != null && ActivityCompat.checkSelfPermission(v.getContext(), Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
                     startActivity(callIntent);
                 }
             }
