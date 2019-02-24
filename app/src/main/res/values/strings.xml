@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">FavContacts</string>
+    <string name="name1">Brianna</string>
+    <string name="number1">6123279302</string>
+    <string name="name2">Campus Security</string>
+    <string name="number2">2187236175</string>
+    <string name="name3">RA on Duty</string>
+    <string name="number3">2183100787</string>
+</resources>
